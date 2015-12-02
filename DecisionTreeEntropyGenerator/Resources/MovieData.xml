@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Schema>
+    <Attributes>
+      <Attribute>Name</Attribute>
+      <Attribute>Genre</Attribute>
+      <Attribute>Decade</Attribute>
+      <Attribute>Format</Attribute>
+      <Attribute>Rating</Attribute>
+    </Attributes>
+    <Answers>
+      <Answer>Yes</Answer>
+      <Answer>No</Answer>
+    </Answers>
+  </Schema>
+  <Queryable>
+    <Attribute>Genre</Attribute>
+    <Attribute>Decade</Attribute>
+    <Attribute>Format</Attribute>
+    <Attribute>Rating</Attribute>
+  </Queryable>
+  <Data>
+    <Datum Answer="Yes">
+      <Name>Star Wars</Name>
+      <Genre>Sci-fi</Genre>
+      <Decade>70s</Decade>
+      <Format>Live</Format>
+      <Rating>PG</Rating>
+    </Datum>
+    <Datum Answer="No">
+      <Name>Maverick</Name>
+      <Genre>Western</Genre>
+      <Decade>90s</Decade>
+      <Format>Live</Format>
+      <Rating>PG</Rating>
+    </Datum>
+    <Datum Answer="Yes">
+      <Name>Children of Men</Name>
+      <Genre>Drama</Genre>
+      <Decade>00s</Decade>
+      <Format>Live</Format>
+      <Rating>15</Rating>
+    </Datum>
+    <Datum Answer="Yes">
+      <Name>South Park</Name>
+      <Genre>Comedy</Genre>
+      <Decade>90s</Decade>
+      <Format>Animated</Format>
+      <Rating>15</Rating>
+    </Datum>
+    <Datum Answer="Yes">
+      <Name>Team America</Name>
+      <Genre>Comedy</Genre>
+      <Decade>00s</Decade>
+      <Format>Live</Format>
+      <Rating>15</Rating>
+    </Datum>
+    <Datum Answer="No">
+      <Name>Iron Man</Name>
+      <Genre>Sci-fi</Genre>
+      <Decade>00s</Decade>
+      <Format>Live</Format>
+      <Rating>12A</Rating>
+    </Datum>
+    <Datum Answer="No">
+      <Name>Transformers 2</Name>
+      <Genre>Sci-fi</Genre>
+      <Decade>00s</Decade>
+      <Format>Live</Format>
+      <Rating>12A</Rating>
+    </Datum>
+    <Datum Answer="No">
+      <Name>Final Fantasy</Name>
+      <Genre>Sci-fi</Genre>
+      <Decade>00s</Decade>
+      <Format>Animated</Format>
+      <Rating>PG</Rating>
+    </Datum>
+    <Datum Answer="No">
+      <Name>Space Jam</Name>
+      <Genre>Comedy</Genre>
+      <Decade>90s</Decade>
+      <Format>Animated</Format>
+      <Rating>U</Rating>
+    </Datum>
+    <Datum Answer="Yes">
+      <Name>Lost in Translation</Name>
+      <Genre>Drama</Genre>
+      <Decade>00s</Decade>
+      <Format>Live</Format>
+      <Rating>15</Rating>
+    </Datum>
+  </Data>
+</DataSet>
