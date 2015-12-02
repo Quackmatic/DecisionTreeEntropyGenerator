@@ -20,9 +20,9 @@ namespace DecisionTreeEntropyGenerator
             protected set;
         }
 
-        private Dictionary<string, string> Values;
+        private Dictionary<Attribute, string> Values;
 
-        public string this[string attribute]
+        public string this[Attribute attribute]
         {
             get
             {
@@ -43,7 +43,7 @@ namespace DecisionTreeEntropyGenerator
             Schema = schema;
             if(values.Length == Schema.Attributes.Length)
             {
-                Values = new Dictionary<string, string>();
+                Values = new Dictionary<Attribute, string>();
                 for(int i = 0; i < values.Length; i++)
                 {
                     Values[Schema.Attributes[i]] = values[i];
@@ -52,6 +52,26 @@ namespace DecisionTreeEntropyGenerator
             if (schema.AnswerValidator(answer))
             {
                 Answer = answer;
+            }
+        }
+
+        public override string ToString()
+        {
+            var identifiers = Values
+                .Where(kv => kv.Key.IsIdentifier);
+            if (identifiers.Count() == 1)
+            {
+                return identifiers.First().Value;
+            }
+            else
+            {
+                return String.Format("({0})",
+                    String.Join("; ",
+                        identifiers
+                            .Select(kv => String.Format("{0}={1}",
+                                kv.Key,
+                                kv.Value))
+                            .ToArray()));
             }
         }
     }

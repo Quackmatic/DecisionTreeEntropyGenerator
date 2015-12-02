@@ -23,16 +23,9 @@ namespace DecisionTreeEntropyGenerator
             protected set;
         }
 
-        public string[] QueryAttributes
-        {
-            get;
-            protected set;
-        }
-
-        public DataSet(DatumSchema schema, string[] queryAttributes, params Datum[] data)
+        public DataSet(DatumSchema schema, params Datum[] data)
         {
             Schema = schema;
-            QueryAttributes = queryAttributes;
             Data = data;
         }
 
@@ -41,19 +34,15 @@ namespace DecisionTreeEntropyGenerator
             return new QuestionTreeNode(
                 Schema,
                 Data,
-                QueryAttributes);
+                Schema.Attributes
+                    .Where(a => a.IsQueryable)
+                    .ToArray());
         }
 
         public static DataSet FromXml(XElement element)
         {
             XElement schemaElement = element.Element("Schema");
             DatumSchema schema = DatumSchema.FromXml(schemaElement);
-
-            XElement queriesElement = element.Element("Queryable");
-            string[] queries = queriesElement
-                .Elements("Attribute")
-                .Select(e => e.Value)
-                .ToArray();
 
             XElement dataElement = element.Element("Data");
             Datum[] data = dataElement
@@ -67,7 +56,7 @@ namespace DecisionTreeEntropyGenerator
 
                         for (int i = 0; i < attributeValues.Length; i++)
                         {
-                            string attributeName = schema.Attributes[i];
+                            string attributeName = schema.Attributes[i].Name;
                             var attributeValueElement = datumElement.Elements(attributeName);
                             if (attributeValueElement.Count() == 0)
                             {
@@ -91,7 +80,7 @@ namespace DecisionTreeEntropyGenerator
                     }
                 }).ToArray();
 
-            return new DataSet(schema, queries, data);
+            return new DataSet(schema, data);
         }
     }
 }

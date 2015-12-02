@@ -9,7 +9,7 @@ namespace DecisionTreeEntropyGenerator
 {
     public class DatumSchema
     {
-        public string[] Attributes
+        public Attribute[] Attributes
         {
             get;
             protected set;
@@ -21,11 +21,11 @@ namespace DecisionTreeEntropyGenerator
             protected set;
         }
 
-        public int GetAttributeIndex(string attribute)
+        public int GetAttributeIndex(string attributeName)
         {
             for(int i = 0; i < Attributes.Length; i++)
             {
-                if(Attributes[i] == attribute)
+                if(Attributes[i].Name == attributeName)
                 {
                     return i;
                 }
@@ -34,27 +34,35 @@ namespace DecisionTreeEntropyGenerator
             return -1;
         }
 
-        public DatumSchema(string[] attributes, Predicate<string> answerValidator)
+        public DatumSchema(
+            Attribute[] attributes,
+            Predicate<string> answerValidator)
         {
             Attributes = attributes;
             AnswerValidator = answerValidator;
         }
-        
+
         public static DatumSchema FromXml(XElement element)
         {
             XElement attributesElement = element.Element("Attributes");
             XElement answersElement = element.Element("Answers");
 
-            string[] attributes = attributesElement
+            Attribute[] attributes = attributesElement
                 .Elements("Attribute")
-                .Select(e => e.Value)
+                .Select(e => new Attribute(
+                        name: e.Value,
+                        isIdentifier: e.Attribute("Identifier").GetOrDefault(a => Boolean.Parse(a.Value), false),
+                        isQueryable: e.Attribute("Queryable").GetOrDefault(a => Boolean.Parse(a.Value), false)
+                    ))
                 .ToArray();
             string[] validAnswers = answersElement
                 .Elements("Answer")
                 .Select(e => e.Value)
                 .ToArray();
 
-            return new DatumSchema(attributes, s => validAnswers.Contains(s));
+            return new DatumSchema(
+                attributes,
+                s => validAnswers.Contains(s));
         }
     }
 }

@@ -2,25 +2,21 @@
 <DataSet>
   <Schema>
     <Attributes>
+      <Attribute Identifier="True">ID</Attribute>
       <Attribute>Name</Attribute>
-      <Attribute>Genre</Attribute>
-      <Attribute>Decade</Attribute>
-      <Attribute>Format</Attribute>
-      <Attribute>Rating</Attribute>
+      <Attribute Queryable="True">Genre</Attribute>
+      <Attribute Queryable="True">Decade</Attribute>
+      <Attribute Queryable="True">Format</Attribute>
+      <Attribute Queryable="True">Rating</Attribute>
     </Attributes>
     <Answers>
       <Answer>Yes</Answer>
       <Answer>No</Answer>
     </Answers>
   </Schema>
-  <Queryable>
-    <Attribute>Genre</Attribute>
-    <Attribute>Decade</Attribute>
-    <Attribute>Format</Attribute>
-    <Attribute>Rating</Attribute>
-  </Queryable>
   <Data>
     <Datum Answer="Yes">
+      <ID>0</ID>
       <Name>Star Wars</Name>
       <Genre>Sci-fi</Genre>
       <Decade>70s</Decade>
@@ -28,6 +24,7 @@
       <Rating>PG</Rating>
     </Datum>
     <Datum Answer="No">
+      <ID>1</ID>
       <Name>Maverick</Name>
       <Genre>Western</Genre>
       <Decade>90s</Decade>
@@ -35,6 +32,7 @@
       <Rating>PG</Rating>
     </Datum>
     <Datum Answer="Yes">
+      <ID>2</ID>
       <Name>Children of Men</Name>
       <Genre>Drama</Genre>
       <Decade>00s</Decade>
@@ -42,6 +40,7 @@
       <Rating>15</Rating>
     </Datum>
     <Datum Answer="Yes">
+      <ID>3</ID>
       <Name>South Park</Name>
       <Genre>Comedy</Genre>
       <Decade>90s</Decade>
@@ -49,6 +48,7 @@
       <Rating>15</Rating>
     </Datum>
     <Datum Answer="Yes">
+      <ID>4</ID>
       <Name>Team America</Name>
       <Genre>Comedy</Genre>
       <Decade>00s</Decade>
@@ -56,6 +56,7 @@
       <Rating>15</Rating>
     </Datum>
     <Datum Answer="No">
+      <ID>5</ID>
       <Name>Iron Man</Name>
       <Genre>Sci-fi</Genre>
       <Decade>00s</Decade>
@@ -63,6 +64,7 @@
       <Rating>12A</Rating>
     </Datum>
     <Datum Answer="No">
+      <ID>6</ID>
       <Name>Transformers 2</Name>
       <Genre>Sci-fi</Genre>
       <Decade>00s</Decade>
@@ -70,6 +72,7 @@
       <Rating>12A</Rating>
     </Datum>
     <Datum Answer="No">
+      <ID>7</ID>
       <Name>Final Fantasy</Name>
       <Genre>Sci-fi</Genre>
       <Decade>00s</Decade>
@@ -77,6 +80,7 @@
       <Rating>PG</Rating>
     </Datum>
     <Datum Answer="No">
+      <ID>8</ID>
       <Name>Space Jam</Name>
       <Genre>Comedy</Genre>
       <Decade>90s</Decade>
@@ -84,6 +88,7 @@
       <Rating>U</Rating>
     </Datum>
     <Datum Answer="Yes">
+      <ID>9</ID>
       <Name>Lost in Translation</Name>
       <Genre>Drama</Genre>
       <Decade>00s</Decade>

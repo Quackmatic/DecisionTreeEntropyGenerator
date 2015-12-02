@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using DecisionTreeEntropyGenerator.Output;
 
 namespace DecisionTreeEntropyGenerator
 {
@@ -15,7 +16,14 @@ namespace DecisionTreeEntropyGenerator
             XElement dataSetElement = dataSetDocument.Root;
             DataSet dataSet = DataSet.FromXml(dataSetElement);
 
+            Working.Print = s => Console.WriteLine(s);
             QuestionTreeNode node = dataSet.GenerateNode();
+            Working.Print = null;
+            Console.WriteLine();
+            Console.WriteLine();
+
+            ITreeGenerator<string> generator = new TikzTreeGenerator();
+            Console.WriteLine(generator.Generate(node));
             Console.ReadKey();
         }
     }
