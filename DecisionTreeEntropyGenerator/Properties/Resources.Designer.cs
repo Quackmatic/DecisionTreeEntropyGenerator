@@ -61,7 +61,50 @@ namespace DecisionTreeEntropyGenerator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;DataSet&gt;
+        ///  &lt;Schema&gt;
+        ///    &lt;Attributes&gt;
+        ///      &lt;Attribute Identifier=&quot;True&quot;&gt;Visitor&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Referrer&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Frequency&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Search&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Length&lt;/Attribute&gt;
+        ///    &lt;/Attributes&gt;
+        ///    &lt;Answers&gt;
+        ///      &lt;Answer&gt;Yes&lt;/Answer&gt;
+        ///      &lt;Answer&gt;No&lt;/Answer&gt;
+        ///    &lt;/Answers&gt;
+        ///  &lt;/Schema&gt;
+        ///  &lt;Data&gt;
+        ///    &lt;Datum Answer=&quot;No&quot;&gt;
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AssignmentData {
+            get {
+                return ResourceManager.GetString("AssignmentData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;DataSet&gt;
+        ///  &lt;Schema&gt;
+        ///    &lt;Attributes&gt;
+        ///      &lt;Attribute Identifier=&quot;True&quot;&gt;ID&lt;/Attribute&gt;
+        ///      &lt;Attribute&gt;Name&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Genre&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Decade&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Format&lt;/Attribute&gt;
+        ///      &lt;Attribute Queryable=&quot;True&quot;&gt;Rating&lt;/Attribute&gt;
+        ///    &lt;/Attributes&gt;
+        ///    &lt;Answers&gt;
+        ///      &lt;Answer&gt;Yes&lt;/Answer&gt;
+        ///      &lt;Answer&gt;No&lt;/Answer&gt;
+        ///    &lt;/Answers&gt;
+        ///  &lt;/Schema&gt;
+        ///  &lt;Data&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MovieData {
             get {

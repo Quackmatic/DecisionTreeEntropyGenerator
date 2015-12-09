@@ -53,7 +53,7 @@ namespace DecisionTreeEntropyGenerator.Output
         private string GenerateAnswer(AnswerTreeNode node)
         {
             return String.Format(
-                "node [answer,label=right:{{{0}: \\{{{1}\\}}}}] {{{0}}}",
+                "node [answer,label=right:{{\\{{{1}\\}}}}] {{{0}}}",
                 node.Answer,
                 String.Join(", ", node.Data.Select(d => d.ToString())));
         }
